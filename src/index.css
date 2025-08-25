@@ -17,13 +17,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --background: #ebf2fc;
+  --foreground: #eef8f9;
+  --card: hsl(200, 60%, 99%);
+  --card-foreground: hsl(0, 0%, 93%);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: hsl(3, 77%, 44%);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -143,13 +143,13 @@ button:focus-visible {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
+  --background: #040918;
+  --foreground: #091540;
+  --card: hsl(226, 25%, 17%);
+  --card-foreground: hsl(225, 23%, 24%);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: hsl(3, 71%, 56%);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -183,4 +183,16 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.background {
+  background: linear-gradient(
+    180deg,
+    var(--color-background) 0%,
+    var(--color-foreground) 100%
+  );
+}
+
+.costume-padding {
+  @apply px-4 md:p-6 lg:px-24;
 }
