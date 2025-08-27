@@ -25,6 +25,8 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: hsl(3, 77%, 44%);
   --primary-foreground: oklch(0.985 0 0);
+  --primary-text: #040918;
+  --muted-text: hsl(226, 11%, 37%);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -117,6 +119,8 @@ button:focus-visible {
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-text: var(--primary-text);
+  --color-muted-text: var(--muted-text);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -151,6 +155,8 @@ button:focus-visible {
   --popover-foreground: oklch(0.985 0 0);
   --primary: hsl(3, 71%, 56%);
   --primary-foreground: oklch(0.205 0 0);
+  --primary-text: #040918;
+  --muted-text: hsl(226, 11%, 37%);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);

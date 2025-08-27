@@ -5,7 +5,7 @@ import HeaderFilter from "./components/header-filter";
 
 function App() {
   return (
-    <div className="costume-padding background w-screen h-screen text-black">
+    <div className="costume-padding background w-screen text-black">
       <AppNav />
       <HeaderFilter />
       <Extensions />
