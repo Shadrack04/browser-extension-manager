@@ -23,7 +23,7 @@ export default function Extensions() {
   }, []);
 
   return (
-    <div className=" grid grid-cols-3 gap-2">
+    <div className=" grid grid-cols-1 pb-4 md:grid-cols-3 gap-2">
       {data?.map((item) => (
         <ExtensionItem
           name={item.name}
