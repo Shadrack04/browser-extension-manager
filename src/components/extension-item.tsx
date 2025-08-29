@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ActiveSwitch } from "./active-switch";
+import { useAppContext } from "../../context/app-context";
 
 type ExtensionItemProps = {
   logo: string;
   name: string;
   description: string;
   isActive: boolean;
-  handleToggle: (name: string) => void;
-  handleRemove: (name: string) => void;
 };
 
 export default function ExtensionItem({
@@ -16,9 +15,8 @@ export default function ExtensionItem({
   name,
   description,
   isActive,
-  handleToggle,
-  handleRemove,
 }: ExtensionItemProps) {
+  const { handleToggle, handleRemove } = useAppContext();
   return (
     <Card className="w-full max-w-sm py-3 px-3 gap-8">
       <CardContent className=" p-0 flex items-center justify-center gap-3">
