@@ -3,7 +3,7 @@ import ExtensionItem from "./extension-item";
 import { useAppContext } from "../../context/app-context";
 
 export default function Extensions() {
-  const { data, handleToggle, handleRemove, filterParam } = useAppContext();
+  const { data, filterParam } = useAppContext();
 
   let filteredData = data;
 
