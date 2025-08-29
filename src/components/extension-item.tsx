@@ -32,7 +32,7 @@ export default function ExtensionItem({
         <Button
           asChild
           variant={"outline"}
-          className=" bg-transparent border-ring text-primary-text rounded-full text-md"
+          className=" bg-transparent border-ring text-primary-text cursor-pointer rounded-full text-md"
         >
           <button onClick={() => handleRemove(name)}>Remove</button>
         </Button>
