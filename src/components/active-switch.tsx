@@ -1,9 +1,13 @@
 import { Switch } from "@/components/ui/switch";
 
-export function ActiveSwitch() {
+type ActiveSwitchProps = {
+  isActive: boolean;
+};
+
+export function ActiveSwitch({ isActive }: ActiveSwitchProps) {
   return (
     <div className="flex items-center space-x-2">
-      <Switch id="airplane-mode" />
+      <Switch checked={isActive} id="airplane-mode" />
     </div>
   );
 }

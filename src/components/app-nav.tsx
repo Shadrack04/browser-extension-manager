@@ -5,7 +5,7 @@ export default function AppNav() {
     <nav className=" bg-card p-2 rounded-xl w-full flex items-center justify-between mb-3">
       <img src="/assets/svg/logo.svg" alt="" />
       <div className=" bg-card-foreground p-2 rounded-lg">
-        <img src="public/assets/svg/icon-moon.svg" alt="" />
+        <img src="/assets/images/icon-moon.svg" alt="" />
       </div>
     </nav>
   );

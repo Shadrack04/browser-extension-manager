@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ExtensionItem from "./extension-item";
 import type { DataType } from "types";
+import type { describe } from "node:test";
 
 const DATA_URL = "../../data.json";
 
@@ -24,11 +25,14 @@ export default function Extensions() {
   return (
     <div className=" grid grid-cols-3 gap-2">
       {data?.map((item) => (
-        <ExtensionItem key={item.name} />
+        <ExtensionItem
+          name={item.name}
+          logo={item.logo}
+          description={item.description}
+          isActive={item.isActive}
+          key={item.name}
+        />
       ))}
-      <ExtensionItem />
-      <ExtensionItem />
-      <ExtensionItem />
     </div>
   );
 }
