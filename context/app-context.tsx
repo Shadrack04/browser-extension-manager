@@ -9,7 +9,7 @@ import type { ContextValueType, DataType } from "types";
 
 const DATA_URL = "../../data.json";
 
-const AppContext = createContext<React.Context | null>(null);
+const AppContext = createContext<React.Context<null> | null>(null);
 
 export default function AppProvider({
   children,
