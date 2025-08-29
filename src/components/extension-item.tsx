@@ -7,6 +7,8 @@ type ExtensionItemProps = {
   name: string;
   description: string;
   isActive: boolean;
+  handleToggle: (name: string) => void;
+  handleRemove: (name: string) => void;
 };
 
 export default function ExtensionItem({
@@ -14,6 +16,8 @@ export default function ExtensionItem({
   name,
   description,
   isActive,
+  handleToggle,
+  handleRemove,
 }: ExtensionItemProps) {
   return (
     <Card className="w-full max-w-sm py-3 px-3 gap-8">
@@ -26,12 +30,17 @@ export default function ExtensionItem({
       </CardContent>
       <CardFooter className="flex items-center justify-between w-full p-0">
         <Button
+          asChild
           variant={"outline"}
           className=" bg-transparent border-ring text-primary-text rounded-full text-md"
         >
-          Remove
+          <button onClick={() => handleRemove(name)}>Remove</button>
         </Button>
-        <ActiveSwitch isActive={isActive} />
+        <ActiveSwitch
+          isActive={isActive}
+          name={name}
+          handleToggle={handleToggle}
+        />
       </CardFooter>
     </Card>
   );

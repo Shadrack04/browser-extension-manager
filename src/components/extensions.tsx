@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ExtensionItem from "./extension-item";
 import type { DataType } from "types";
-import type { describe } from "node:test";
 
 const DATA_URL = "../../data.json";
 
@@ -22,6 +21,20 @@ export default function Extensions() {
     fetchData();
   }, []);
 
+  const handleToggle = (name: string) => {
+    if (!name) return;
+    setData((data) =>
+      data.map((item) =>
+        item.name == name ? { ...item, isActive: !item.isActive } : item
+      )
+    );
+  };
+
+  const handleRemove = (name: string) => {
+    if (!name) return;
+    setData((data) => data.filter((item) => item.name !== name));
+  };
+
   return (
     <div className=" grid grid-cols-1 pb-4 md:grid-cols-3 gap-2">
       {data?.map((item) => (
@@ -31,6 +44,8 @@ export default function Extensions() {
           description={item.description}
           isActive={item.isActive}
           key={item.name}
+          handleToggle={handleToggle}
+          handleRemove={handleRemove}
         />
       ))}
     </div>
