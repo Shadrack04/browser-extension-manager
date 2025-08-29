@@ -21,8 +21,6 @@ export default function Extensions() {
           description={item.description}
           isActive={item.isActive}
           key={item.name}
-          handleToggle={handleToggle}
-          handleRemove={handleRemove}
         />
       ))}
     </div>
