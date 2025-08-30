@@ -9,7 +9,7 @@ import type { ContextValueType, DataType } from "types";
 
 const DATA_URL = "../../data.json";
 
-const AppContext = createContext<React.Context<null> | null>(null);
+const AppContext = createContext<ContextValueType | null>(null);
 
 export default function AppProvider({
   children,
@@ -19,6 +19,8 @@ export default function AppProvider({
   const [filterParam, setFilterParam] = useState("all");
   const [data, setData] = useState<DataType>([]);
   const [error, setError] = useState("");
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +34,24 @@ export default function AppProvider({
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const isDark = savedTheme
+      ? savedTheme === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    setIsDarkTheme(isDark);
+
+    document.documentElement.classList.toggle("dark", isDark);
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted) return;
+    document.documentElement.classList.toggle("dark", isDarkTheme);
+    localStorage.setItem("theme", isDarkTheme ? "dark" : "light");
+  }, [hasMounted, isDarkTheme]);
 
   const handleToggle = (name: string) => {
     if (!name) return;
@@ -59,14 +79,16 @@ export default function AppProvider({
       handleRemove,
       handleToggle,
       handleFilter,
+      setIsDarkTheme,
+      isDarkTheme,
     }),
-    [filterParam, data]
+    [filterParam, data, isDarkTheme]
   );
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
 export const useAppContext = () => {
-  const context: ContextValueType = useContext(AppContext);
+  const context = useContext(AppContext);
   if (context == undefined)
     throw new Error("Context used outside its provider");
   return context;

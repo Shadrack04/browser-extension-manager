@@ -6,9 +6,11 @@ export type DataType = {
 }[];
 
 export type ContextValueType = {
-  filterParam: string;
-  data: DataType;
-  handleRemove: (name: string) => void;
-  handleToggle: (name: string) => void;
-  handleFilter: (name: string) => void;
+  filterParam?: string;
+  data?: DataType;
+  handleRemove?: (name: string) => void;
+  handleToggle?: (name: string) => void;
+  handleFilter?: (name: string) => void;
+  setIsDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
+  isDarkTheme: boolean;
 };

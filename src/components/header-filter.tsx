@@ -32,9 +32,9 @@ export default function HeaderFilter() {
             asChild
             className={` ${
               btn.action == filterParam
-                ? " bg-primary text-white "
-                : " bg-card text-black "
-            }  rounded-full py-0 hover:text-white`}
+                ? " bg-primary text-primary-text "
+                : " bg-card text-primary-text dark:border-input dark:hover:bg-input/50"
+            }  rounded-full py-0 hover:text-white cursor-pointer`}
           >
             <button onClick={() => handleFilter(btn.action)}>{btn.name}</button>
           </Button>
