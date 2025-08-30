@@ -155,8 +155,8 @@ button:focus-visible {
   --popover-foreground: oklch(0.985 0 0);
   --primary: hsl(3, 71%, 56%);
   --primary-foreground: oklch(0.205 0 0);
-  --primary-text: #040918;
-  --muted-text: hsl(226, 11%, 37%);
+  --primary-text: #fff;
+  --muted-text: oklch(0.708 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -186,16 +186,16 @@ button:focus-visible {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
+  /* body {
     @apply bg-background text-foreground;
-  }
+  } */
 }
 
 .background {
   background: linear-gradient(
     180deg,
-    var(--color-background) 0%,
-    var(--color-foreground) 100%
+    var(--background) 0%,
+    var(--foreground) 100%
   );
 }
 
